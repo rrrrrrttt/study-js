@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+    <script src="./1.防抖.js"></script>
+</head>
+
+<body>
+    <input type="text">
+
+    <script>
+        const inputEl = document.querySelector('input')
+        let count = 0
+
+        function inputchange(event) {
+            console.log(`发送第${++count}次网络请求`, this, event);
+        }
+        const _debounce = debounce(inputchange, 3000, true)
+        inputEl.oninput = _debounce
+
+    </script>
+</body>
+
+</html>
